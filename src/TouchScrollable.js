@@ -8,24 +8,30 @@ import { allowTouchMove, preventInertiaScroll, listenerOptions } from './utils';
 type Props = {
   // allow touch-scroll on this element
   children: Element<*>,
+  options?: any
 };
 
 export class TouchScrollable extends PureComponent<Props> {
+  static defaultProps = {
+    options: {},
+  }
+
   scrollableArea: HTMLElement;
   getScrollableArea = (ref: HTMLElement) => {
     this.scrollableArea = ref;
   };
   componentDidMount() {
+    const { onTouchMove, onTouchStart } = this.props.options;
     if (!canUseEventListeners) return;
 
     this.scrollableArea.addEventListener(
       'touchstart',
-      preventInertiaScroll,
+      onTouchStart || preventInertiaScroll,
       listenerOptions,
     );
     this.scrollableArea.addEventListener(
       'touchmove',
-      allowTouchMove,
+      onTouchMove || allowTouchMove,
       listenerOptions,
     );
   }
@@ -34,12 +40,12 @@ export class TouchScrollable extends PureComponent<Props> {
 
     this.scrollableArea.removeEventListener(
       'touchstart',
-      preventInertiaScroll,
+      onTouchStart || preventInertiaScroll,
       listenerOptions,
     );
     this.scrollableArea.removeEventListener(
       'touchmove',
-      allowTouchMove,
+      onTouchMove || allowTouchMove,
       listenerOptions,
     );
   }

@@ -1,7 +1,7 @@
 {
-  "name": "react-scrolllock",
+  "name": "@andrewkiri/react-scrolllock",
   "description": "Prevent scroll on the body when component is mounted.",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -16,19 +16,26 @@
     "precommit": "flow check && lint-staged"
   },
   "jest": {
-    "setupFiles": ["<rootDir>/config/setupPolyfills.js"],
+    "setupFiles": [
+      "<rootDir>/config/setupPolyfills.js"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>/config/setupFramework.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jossmac/react-scrolllock.git"
+    "url": "git@github.com:AndrewKiri/react-scrolllock.git"
   },
-  "author": "Joss Mackison (https://github.com/jossmac)",
+  "author": "Andrew Kirichok (https://github.com/AndrewKiri) & Joss Mackison (https://github.com/jossmac)",
   "bugs": {
-    "url": "https://github.com/jossmac/react-scrolllock/issues"
+    "url": "https://github.com/AndrewKiri/react-scrolllock/issues"
   },
-  "homepage": "https://jossmac.github.io/react-scrolllock",
-  "keywords": ["react", "scroll", "scroll-lock", "disable-scroll"],
+  "homepage": "https://github.com/AndrewKiri/react-scrolllock",
+  "keywords": [
+    "react",
+    "scroll",
+    "scroll-lock",
+    "disable-scroll"
+  ],
   "dependencies": {
     "exenv": "^1.2.2",
     "react-node-resolver": "^2.0.1"
