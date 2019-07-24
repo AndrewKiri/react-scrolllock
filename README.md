@@ -5,13 +5,13 @@ Prevent scroll on the `<body />` when a component is mounted.
 ## Install
 
 ```bash
-yarn add react-scrolllock
+yarn add react-scrolllock-configurable
 ```
 
 ## Usage
 
 ```js
-import ScrollLock, { TouchScrollable } from 'react-scrolllock';
+import ScrollLock, { TouchScrollable } from 'react-scrolllock-configurable';
 
 class Modal extends Component {
   state = { lockScroll: false }
@@ -58,3 +58,13 @@ This is necessary because the `touchmove` event is explicitly cancelled &mdash; 
 | Property                 | Description                                    |
 | :----------------------- | :--------------------------------------------- |
 | children `element` | **Required** The element that can be scrolled. |
+| options `object` | **Optional** Provide an options object |
+
+##### Options 
+```js
+Options object can have `onTouchMove` and `onTouchStart` event handlers if you need to unblock scrolling 
+{
+  onTouchMove: (event) => {}
+  onTouchStart: (event) => {}
+}
+```
