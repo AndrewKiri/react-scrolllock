@@ -36,6 +36,7 @@ export class TouchScrollable extends PureComponent<Props> {
     );
   }
   componentWillUnmount() {
+    const { onTouchMove, onTouchStart } = this.props.options;
     if (!canUseEventListeners) return;
 
     this.scrollableArea.removeEventListener(
