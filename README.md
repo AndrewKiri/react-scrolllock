@@ -2,6 +2,13 @@
 
 Prevent scroll on the `<body />` when a component is mounted.
 
+## Note from developer
+This library is a fork of `react-scrolllock` by `jossmac` with ability to accept options object which will override some touch handlers.
+It is useful if you want to have vertical scroll locked while allowing for horizontal scroll or in cases where some of your children require horizontal scroll to work (which original package doesn't allow because of aggressive event capturing and propagation prevention) 
+
+[Forked Github Repo](https://github.com/jossmac/react-scrolllock)
+[Forked NPM Package](https://www.npmjs.com/package/react-scrolllock)
+
 ## Install
 
 ```bash
